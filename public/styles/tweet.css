@@ -9,10 +9,10 @@ article {
 
 article:hover {
   box-shadow: 10px 5px 5px #999;
-  font-weight: 600;
+  font-weight: 700;
 }
 
-article:hover.tweet a.username-link {
+article:hover a.username-link {
   opacity: 1;
 }
 
@@ -27,7 +27,7 @@ article.tweet header {
   color:black;
 }
 
-article.tweet a.username-link {
+article a.username-link {
   opacity:0;
 }
 
