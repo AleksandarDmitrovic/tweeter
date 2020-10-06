@@ -1,0 +1,48 @@
+article {
+  margin: 10px 0px;
+  border: 3px solid black;
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  background-color: #f4f1ec;
+}
+
+article:hover {
+  box-shadow: 10px 5px 5px #999;
+  font-weight: 600;
+}
+
+article:hover.tweet a.username-link {
+  opacity: 1;
+}
+
+article.tweet header {
+  height: 20px;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-image: none;
+  background-color: #f4f1ec;
+  color:black;
+}
+
+article.tweet a.username-link {
+  opacity:0;
+}
+
+article.tweet main{
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: solid;
+  padding: 0px 20px;
+  margin-bottom: 10px;
+}
+
+article.tweet footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+

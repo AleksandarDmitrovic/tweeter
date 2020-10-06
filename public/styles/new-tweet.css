@@ -24,14 +24,13 @@ textarea {
   border-bottom: solid;
 }
 
-
-.tweet-footer {
+.new-tweet-footer {
   padding-top: .5em;
   display: flex;
   justify-content: space-between;
 }
 
-button {
+.new-tweet button {
   font-family: "Bungee", sans-serif;
   color: white;
   background-color: #4056a1;
