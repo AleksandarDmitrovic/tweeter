@@ -25,10 +25,19 @@ article.tweet header {
   background-image: none;
   background-color: #f4f1ec;
   color:black;
+  margin-top: auto;
+  padding-bottom: 100px;
 }
 
 article a.username-link {
   opacity:0;
+}
+
+article a.username-avatar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 article.tweet main{
@@ -46,3 +55,6 @@ article.tweet footer {
   justify-content: space-between;
 }
 
+article.tweet footer button {
+  
+}
