@@ -6,9 +6,6 @@ $(document).ready(function() {
     let tweetChar = $(this).val().length
     let charCount = 140 - tweetChar;
 
-    let thisObj = $(this);
-    console.log(thisObj)
-
     // let charCountWithThis = $(this)[0].nextElementSibling.children[1]//---Accessing the output html tag with name counter
     // charCountWithThis = $(charCountWithThis)[0].innerText;          //---with the method compass wants. I choose to make an
     // console.log('charCountWithThis :', charCountWithThis);          //-- id for this output instead

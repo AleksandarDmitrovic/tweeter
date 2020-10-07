@@ -60,4 +60,71 @@ const createTweetElement = function(tweet) {
 
 renderTweets(data);
 
+// // AJAX REQUEST LONG FORM
+// $('form').on('submit', function (event) {
+//   event.preventDefault();
+//   const $tweet = $(this).serialize();
+//   $.ajax({
+//     url: '/tweets',
+//     method: 'POST',
+//     data: $tweet,
+//     success: function(newTweet) {
+//     console.log('Success', newTweet)
+//     },
+//     error: function(error) {
+//       console.log(error);
+//     }
+//   });
+// });
+
+
+//--------------------------------------------------------------------------------
+//TO DELETE
+// const fetchTweets = (posts) => {
+//   $.ajax({
+//     url: '/tweets',
+//     method: 'POST',
+//     dataType: 'json',
+//     success: (posts) => {
+//       console.log(posts);
+//       renderPosts(posts)
+//     },
+//     error: (error) => {
+//       console.error(error);
+//     }
+//   });
+// };
+// // const $postButton = 
+// $('form').on('submit', function (event) {
+//   event.preventDefault();
+//   $tweet = $(this).serialize();
+//   console.log('event :', event);
+//   fetchTweets($tweet)
+// });
+
+// const renderPosts = (posts) => {
+
+// };
+//-----------------------------------------------------------------------------
+
+// Ajax request shorthand with promise
+const $ajaxPost = function() {
+  const $form = $('form');
+  $form.on('submit', function (event) {
+    event.preventDefault()
+  let $tweet = $(this).serialize();
+    $.ajax('/tweets', { method: 'POST', data: $tweet})
+    .then(function (newTweet) {
+      console.log('Success', newTweet);
+    })
+    .catch(function(error) {
+      console.error(error);
+    })
+  });
+  
+};
+$ajaxPost();
+
+//--------------------------------------------------------------------------
+
 });
