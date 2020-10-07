@@ -48,8 +48,7 @@ $(document).ready(function () {
     } else {
       $.ajax('/tweets', { method: 'POST', data: $tweet })
         .then(function (newTweet) {
-          console.log('Success', newTweet);
-          $( "article.tweets-container" ).load( "/tweet" );
+          loadtweets();
         })
         .catch(function (error) {
           console.log(error);
