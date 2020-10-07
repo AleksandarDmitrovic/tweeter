@@ -28,7 +28,8 @@ $(document).ready(function () {
   };
 
   const renderTweets = function (tweets) {
-    tweets.forEach(tweet => {
+    tweetsReversed = tweets.reverse()
+    tweetsReversed.forEach(tweet => {
       $('#tweets-container').append(createTweetElement(tweet));
     });
   };
