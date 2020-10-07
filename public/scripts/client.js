@@ -80,6 +80,12 @@ $(document).ready(function () {
 
   loadtweets();
 
+  $("#display-tweet-form").on("click", () => {
+    $('.new-tweet').slideToggle();
+    $('#tweet-text').focus();
+
+  });
+
 });
 
 
