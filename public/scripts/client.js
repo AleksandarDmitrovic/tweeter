@@ -70,10 +70,8 @@ $(document).ready(function () {
   // Ajax get request rendering tweets to home page
   const loadtweets = function () {
     $.ajax('/tweets', { method: 'GET' })
-      .then(function (tweets) {
-        renderTweets(tweets);
-      })
-      .catch(function (error) {
+      .then(renderTweets)
+      .catch( (error) => {
         console.log(error);
       })
   };

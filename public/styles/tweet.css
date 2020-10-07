@@ -49,6 +49,7 @@ article a.username-avatar img {
 
 article.tweet main{
   width: 100%;
+  word-break: break-all;
   flex-direction: row;
   align-items: center;
   border-bottom: solid;
