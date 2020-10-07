@@ -5,6 +5,13 @@
  */
 $(document).ready(function () {
 
+  //Escape function to prevent XSS
+const escape = function (str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
   const createTweetElement = function (tweet) {
     let $tweet = `
     <article class="tweet">
@@ -13,7 +20,7 @@ $(document).ready(function () {
     <a class="username-link" href="">${tweet.user.handle}</a>
     </header>
     <main>
-    <p>${tweet.content.text}</p>
+    <p>${escape(tweet.content.text)}</p>
     </main>
     <footer>
     <div>${tweet.created_at}</div>
@@ -61,7 +68,6 @@ $(document).ready(function () {
   const loadtweets = function () {
     $.ajax('/tweets', { method: 'GET' })
       .then(function (tweets) {
-        console.log('Success', tweets);
         renderTweets(tweets);
       })
       .catch(function (error) {
@@ -72,6 +78,9 @@ $(document).ready(function () {
   loadtweets();
 
 });
+
+
+
 
 //-----------------------------------------------------------------------------
 
