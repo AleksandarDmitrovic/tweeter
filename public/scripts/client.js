@@ -28,9 +28,8 @@ $(document).ready(function () {
   };
 
   const renderTweets = function (tweets) {
-    tweetsReversed = tweets.reverse()
-    tweetsReversed.forEach(tweet => {
-      $('#tweets-container').append(createTweetElement(tweet));
+    tweets.forEach(tweet => {
+      $('#tweets-container').prepend(createTweetElement(tweet));
     });
   };
 
@@ -39,7 +38,7 @@ $(document).ready(function () {
   $('form').on('submit', function (event) {
     event.preventDefault()
     let $tweet = $(this).serialize();
-    
+
     //validation
     $input = $('#tweet-text').val();
     if (!$input) {
@@ -50,10 +49,12 @@ $(document).ready(function () {
       $.ajax('/tweets', { method: 'POST', data: $tweet })
         .then(function (newTweet) {
           console.log('Success', newTweet);
+          $( "article.tweets-container" ).load( "/tweet" );
         })
         .catch(function (error) {
           console.log(error);
         })
+
     }
   });
 
