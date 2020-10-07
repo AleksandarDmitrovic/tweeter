@@ -11,8 +11,9 @@ $(document).ready(function () {
     // console.log('charCountWithThis :', charCountWithThis);          //-- id for this output instead
 
     if (charCount >= 0) {
+      $("#char-count").css("color", "black");
       $("#char-count").text(charCount);
-    } else {
+    } else if (charCount < 0) {
       $("#char-count").css("color", "red");
       $("#char-count").text(charCount);
     }

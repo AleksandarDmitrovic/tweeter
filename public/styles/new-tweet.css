@@ -35,3 +35,13 @@ textarea {
   border: transparent;
   
 }
+
+.validation { 
+  color:hsl(0, 100%, 50%);
+  background: transparent;
+  border: 3px solid hsl(0, 100%, 50%);
+  padding: 10px;
+  border-radius: 0;
+  display: none;
+  margin-top: 10px;
+}

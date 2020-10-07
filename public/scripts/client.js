@@ -49,10 +49,13 @@ $(document).ready(function () {
     //validation
     $input = $('#tweet-text').val();
     if (!$input) {
-      alert("No Tweet Present");
+      $("#error-message").text("Please write a tweet")
+      $('.validation').slideDown();
     } else if ($input.length > 140) {
-      alert("Tweet is too long");
+      $("#error-message").text("Tweet too long. Please keep it short and sweet")
+      $('.validation').slideDown();
     } else {
+      $('.validation').slideUp();
       $.ajax('/tweets', { method: 'POST', data: $tweet })
         .then(function (newTweet) {
           loadtweets();
