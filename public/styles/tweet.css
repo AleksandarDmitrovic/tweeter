@@ -59,5 +59,9 @@ article.tweet footer {
 }
 
 article.tweet footer button {
-  /* to come back to */
+  padding: 5px 7px;
+  color:blue;
+  float:left;
+  margin:2px;
+  border:0;
 }

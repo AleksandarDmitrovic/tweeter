@@ -25,9 +25,9 @@ $(document).ready(function () {
     <footer>
     <div>${tweet.created_at}</div>
     <div class="links">
-    <button>Many buttons</button>
-    <button>Many buttons</button>
-    <button>Many buttons</button>
+    <button><i class="fas fa-flag"></i></button>
+    <button><i class="fas fa-retweet"></i></button>
+    <button><i class="fas fa-heart"></i>"</button>
     </div>
     </footer>
     </article>`
