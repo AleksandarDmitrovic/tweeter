@@ -6,11 +6,11 @@
 $(document).ready(function () {
 
   //Escape function to prevent XSS
-const escape = function (str) {
-  let div = document.createElement('div');
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML;
-};
+  const escape = function (str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
   const createTweetElement = function (tweet) {
     let $tweet = `
