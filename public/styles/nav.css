@@ -22,9 +22,22 @@ span {
   font-family: "Source Sans Pro", sans-serif;
   color: #ffffff;
   padding: 1.5em;
+  outline: none;
   
 }
 
 .nav-buttons:hover button {
   font-weight: 700;
 } 
+
+#scroll-up {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 6px;
+  border: none;
+  background: none;
+  font-size: xxx-large;
+  color: red;
+  outline: none;
+}
