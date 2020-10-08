@@ -26,6 +26,27 @@ span {
   
 }
 
+#display-tweet-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@keyframes display-pointer {
+  0%   { top: 0px}
+  25%  { top: 5px}
+  50%  { top: 10px}
+  75%  { top: 5px}
+  100% { top: 0px}
+}
+
+#display-tweet-form i{
+  color: red;
+  position: relative;
+  animation-name: display-pointer;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
 .nav-buttons:hover button {
   font-weight: 700;
 } 
