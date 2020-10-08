@@ -1,7 +1,7 @@
 nav {
   height: 100px;
   width: 100%;
-  background-color: #4056a1;
+  background-color:transparent;
   color: #ffffff;
   display: flex;
   justify-content: space-between;
@@ -31,13 +31,19 @@ span {
 } 
 
 #scroll-up {
+  display: none;
   position: fixed;
   bottom: 0;
   right: 0;
-  padding: 6px;
+  padding: 30px;
   border: none;
   background: none;
   font-size: xxx-large;
   color: red;
   outline: none;
+}
+
+#scroll-up:hover {
+  text-shadow: 5px 5px 5px #999;
+  cursor: pointer;
 }

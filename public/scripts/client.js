@@ -77,10 +77,27 @@ $(document).ready(function () {
   };
 
   loadtweets();
-
+  
+  //Nav Toggle Button for the tweet form 
   $("#display-tweet-form").on("click", () => {
     $('.new-tweet').slideToggle();
     $('#tweet-text').focus();
+
+  });
+  
+  //Navigation Scroll to Top Button
+  $(window).on("scroll", function() {
+    // $('.new-tweet').slideUp();
+    $('#scroll-up').show();
+    $("#display-tweet-form").hide()
+
+  });
+
+  $("#scroll-up").on("click", () => {
+    $('.new-tweet').slideDown();
+    $('#tweet-text').focus();
+    $("#display-tweet-form").show();
+    $('#scroll-up').hide();
 
   });
 

@@ -69,4 +69,5 @@ article.tweet footer button {
   float:left;
   margin:2px;
   border:0;
+  outline: none;
 }
