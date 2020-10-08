@@ -2,7 +2,15 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+This repository has the starter code for the project from Lighthouse Labs: As a student I forked and cloned this repository, then build upon it to practice HTML, CSS, JS, jQuery and AJAX front-end skills, and my Node, Express and MongoDB back-end skills.
+
+I first build out the base functionality of displaying composing and submitting new tweets on one page. In addition, I created toggle buttons for accessing the tweet form (top right) and scrolling back to the top of the page while browsing tweets (bottom right). 
+
+## Final Product
+
+!["Screenshot of URLs page"]()
+!["Screenshot of Shortened URL Edit page"]()
+!["Screenshot of Create New URL page"]()
 
 ## Getting Started
 
