@@ -8,9 +8,9 @@ I first build out the base functionality of displaying composing and submitting 
 
 ## Final Product
 
-!["Screenshot of URLs page"]()
-!["Screenshot of Shortened URL Edit page"]()
-!["Screenshot of Create New URL page"]()
+!["Screenshot of the Top of the Tweeter Page "](https://github.com/AleksandarDmitrovic/tweeter/blob/master/docs/top.png?raw=true)
+!["Screenshot of Tweet Compose Box"](https://github.com/AleksandarDmitrovic/tweeter/blob/master/docs/tweet-box.png?raw=true)
+!["Screenshot of Tweets"](https://github.com/AleksandarDmitrovic/tweeter/blob/master/docs/browse-tweets.png?raw=true)
 
 ## Getting Started
 
