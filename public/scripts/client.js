@@ -55,6 +55,19 @@ $(document).ready(function () {
       return false;
     }
   };
+  
+  //Loads Only the New Tweet
+  const loadNewTweet = () => {
+    $.ajax('/tweets', { method: 'GET' })
+    .then((tweets) => {
+      lastTweeetIndex = tweets.length - 1;
+      tweet = tweets[lastTweeetIndex];
+      $('#tweets-container').prepend(createTweetElement(tweet));
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  };
 
   // Ajax post request -shorthand with promise
   $('form').on('submit', function (event) {
@@ -68,7 +81,7 @@ $(document).ready(function () {
     if (!error) {
       $.ajax('/tweets', { method: 'POST', data: $tweet })
         .then(() => {
-          loadtweets();
+          loadNewTweet();
           $('#tweet-text').val('');
           $("#char-count").text(140);
         })
