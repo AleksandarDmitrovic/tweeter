@@ -3,16 +3,17 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-$(document).ready(function() {
+$(document).ready(function () {
 
   //Escape function to prevent XSS
-  const escape = function(str) {
+  const escape = function (str) {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
-  const createTweetElement = function(tweet) {
+
+  const createTweetElement = function (tweet) {
     let $tweet = `
     <article class="tweet">
     <header>
@@ -23,7 +24,7 @@ $(document).ready(function() {
     <p>${escape(tweet.content.text)}</p>
     </main>
     <footer>
-    <div>${tweet.created_at}</div>
+    <div>${moment(new Date(tweet.created_at), "YYYYMMDD").fromNow()}</div>
     <div class="links">
     <button><i class="fas fa-flag"></i></button>
     <button><i class="fas fa-retweet"></i></button>
@@ -34,27 +35,37 @@ $(document).ready(function() {
     return $tweet;
   };
 
-  const renderTweets = function(tweets) {
+  const renderTweets = function (tweets) {
     tweets.forEach(tweet => {
       $('#tweets-container').prepend(createTweetElement(tweet));
     });
   };
 
+  const validate = (content) => {
+    if (!content) {
+      $("#error-message").text("Please write a tweet");
+      $('.validation').slideDown();
+      return true;
+    } else if (content.length > 140) {
+      $("#error-message").text("Tweet too long. Please keep it short and sweet");
+      $('.validation').slideDown();
+      return true;
+    } else {
+      $('.validation').slideUp();
+      return false;
+    }
+  };
+
   // Ajax post request -shorthand with promise
-  $('form').on('submit', function(event) {
+  $('form').on('submit', function (event) {
     event.preventDefault();
     let $tweet = $(this).serialize();
 
     //Validation of input tweet
     $input = $('#tweet-text').val();
-    if (!$input) {
-      $("#error-message").text("Please write a tweet");
-      $('.validation').slideDown();
-    } else if ($input.length > 140) {
-      $("#error-message").text("Tweet too long. Please keep it short and sweet");
-      $('.validation').slideDown();
-    } else {
-      $('.validation').slideUp();
+    const error = validate($input);
+
+    if (!error) {
       $.ajax('/tweets', { method: 'POST', data: $tweet })
         .then(() => {
           loadtweets();
@@ -64,12 +75,11 @@ $(document).ready(function() {
         .catch((error) => {
           console.log(error);
         });
-
     }
   });
 
   // Ajax get request rendering tweets to home page
-  const loadtweets = function() {
+  const loadtweets = function () {
     $.ajax('/tweets', { method: 'GET' })
       .then(renderTweets)
       .catch((error) => {
@@ -78,23 +88,23 @@ $(document).ready(function() {
   };
 
   loadtweets();
-  
+
   //Nav Toggle Button for the tweet form
   $("#display-tweet-form").on("click", () => {
     $('.new-tweet').slideToggle();
     $('#tweet-text').focus();
 
   });
-  
+
   //Exectuted on scroll
-  $(window).on("scroll", function() {
+  $(window).on("scroll", function () {
     $('#scroll-up').show();
     $("#display-tweet-form").hide();
   });
-  
+
   //Scroll to Top Button
   $("#scroll-up").on("click", () => {
-    $('.new-tweet').slideDown('fast',() => {
+    $('.new-tweet').slideDown('fast', () => {
       $('#scroll-up').hide(() => {
         $("#display-tweet-form").show();
       });
