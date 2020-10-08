@@ -17,7 +17,8 @@ article:hover {
 }
 
 article:hover a.username-link {
-  opacity: 1;
+  opacity: 0.5;
+  color: #999;
 }
 
 article.tweet header {
@@ -70,4 +71,11 @@ article.tweet footer button {
   margin:2px;
   border:0;
   outline: none;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 1024px) {
+  article.tweet header {
+    max-width: none;
+  }
 }
