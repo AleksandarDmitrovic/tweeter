@@ -27,7 +27,7 @@ $(document).ready(function () {
     <div class="links">
     <button><i class="fas fa-flag"></i></button>
     <button><i class="fas fa-retweet"></i></button>
-    <button><i class="fas fa-heart"></i>"</button>
+    <button><i class="fas fa-heart"></i></button>
     </div>
     </footer>
     </article>`
@@ -59,8 +59,10 @@ $(document).ready(function () {
       $.ajax('/tweets', { method: 'POST', data: $tweet })
         .then(function (newTweet) {
           loadtweets();
+          $('#tweet-text').val('')
+          $("#char-count").text(140)
         })
-        .catch(function (error) {
+        .catch((error) => {
           console.log(error);
         })
 
@@ -85,25 +87,22 @@ $(document).ready(function () {
 
   });
   
-  //Navigation Scroll to Top Button
+  //Exectuted on scroll
   $(window).on("scroll", function() {
-    // $('.new-tweet').slideUp();
     $('#scroll-up').show();
     $("#display-tweet-form").hide()
-
   });
-
+  
+  //Scroll to Top Button
   $("#scroll-up").on("click", () => {
-    $('.new-tweet').slideDown('slow',() => {
+    $('.new-tweet').slideDown('fast',() => {
       $('#scroll-up').hide(() => {
         $("#display-tweet-form").show();
       });
     });
     $('#tweet-text').focus();
-    
-    
-
   });
+
 
 });
 
