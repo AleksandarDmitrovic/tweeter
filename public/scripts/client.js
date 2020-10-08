@@ -94,10 +94,14 @@ $(document).ready(function () {
   });
 
   $("#scroll-up").on("click", () => {
-    $('.new-tweet').slideDown();
+    $('.new-tweet').slideDown('slow',() => {
+      $('#scroll-up').hide(() => {
+        $("#display-tweet-form").show();
+      });
+    });
     $('#tweet-text').focus();
-    $("#display-tweet-form").show();
-    $('#scroll-up').hide();
+    
+    
 
   });
 
